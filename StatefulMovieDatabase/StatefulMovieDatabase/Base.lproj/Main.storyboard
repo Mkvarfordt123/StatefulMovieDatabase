@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6xU-Jb-PiQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6xU-Jb-PiQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,13 +23,53 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="168" id="vct-cI-9QN" customClass="MovieTableViewCell" customModule="StatefulMovieDatabase" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88.5" width="414" height="168"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="168"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vct-cI-9QN" id="jCJ-qN-bX3">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="168"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ixx-1k-Eoq">
+                                            <rect key="frame" x="301.5" y="13" width="94.5" height="142"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="ixx-1k-Eoq" secondAttribute="height" multiplier="2:3" id="QjZ-vv-LJR"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="JWX-Yt-rOB">
+                                            <rect key="frame" x="22" y="13" width="104" height="142"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="( Movie Title )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXk-aE-2Ou">
+                                                    <rect key="frame" x="0.0" y="0.0" width="104" height="51"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="( Synopsis )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSK-qN-kT1">
+                                                    <rect key="frame" x="0.0" y="91" width="104" height="51"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
                                     <color key="backgroundColor" red="0.15744033460000001" green="0.92504143709999997" blue="0.99998575450000005" alpha="0.4954621776" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ixx-1k-Eoq" secondAttribute="bottom" constant="2" id="3bI-gZ-2wn"/>
+                                        <constraint firstItem="JWX-Yt-rOB" firstAttribute="leading" secondItem="jCJ-qN-bX3" secondAttribute="leadingMargin" constant="2" id="DR5-Al-JiG"/>
+                                        <constraint firstItem="ixx-1k-Eoq" firstAttribute="leading" secondItem="JWX-Yt-rOB" secondAttribute="trailing" constant="175.5" id="Fp7-mt-V7b"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="JWX-Yt-rOB" secondAttribute="bottom" constant="2" id="L0q-o7-zqd"/>
+                                        <constraint firstItem="JWX-Yt-rOB" firstAttribute="top" secondItem="jCJ-qN-bX3" secondAttribute="topMargin" constant="2" id="PAm-vd-PfC"/>
+                                        <constraint firstItem="ixx-1k-Eoq" firstAttribute="top" secondItem="jCJ-qN-bX3" secondAttribute="topMargin" constant="2" id="Q61-zf-c8n"/>
+                                        <constraint firstAttribute="trailing" secondItem="JWX-Yt-rOB" secondAttribute="trailing" constant="288" id="Via-Sg-0eM"/>
+                                        <constraint firstItem="ixx-1k-Eoq" firstAttribute="trailing" secondItem="jCJ-qN-bX3" secondAttribute="trailingMargin" constant="2" id="otM-uk-9H4"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="movieImage" destination="ixx-1k-Eoq" id="Tj4-J9-Ujg"/>
+                                    <outlet property="movieSynopsisLabel" destination="tSK-qN-kT1" id="jwf-eB-U8P"/>
+                                    <outlet property="movieTitleLabel" destination="vXk-aE-2Ou" id="PEO-6U-mrN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -51,7 +92,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6xU-Jb-PiQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TZF-mS-Lqz">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
